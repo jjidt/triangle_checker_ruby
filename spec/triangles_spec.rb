@@ -8,8 +8,8 @@ describe "Triangle" do
   end
 
   it "should test whether the inputted sides can construct a triangle" do
-    test_triangle = Triangle.new(1,2,3)
-    test_triangle.is_triangle?.should eq false
+    test_triangle = Triangle.new(4,4,7)
+    test_triangle.is_triangle?.should eq true
   end
 
   it "identifies an equilateral triangle" do

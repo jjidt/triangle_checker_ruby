@@ -1,9 +1,6 @@
 class Triangle
   def initialize(side1,side2,side3)
-    @side1 = side1
-    @side2 = side2
-    @side3 = side3
-    @sides = [@side1, @side2, @side3].sort
+    @sides = [side1, side2, side3].sort
   end
 
   def is_triangle?
@@ -11,8 +8,10 @@ class Triangle
   end
 
   def type
-    return "equilateral" if @sides.uniq.length == 1
-    return "isosceles" if @sides.uniq.length == 2
-    "scalene"
+    if self.is_triangle?
+      return "equilateral" if @sides.uniq.length == 1
+      return "isosceles" if @sides.uniq.length == 2
+      return "scalene" if @sides.uniq.length == 3
+    end
   end
 end
